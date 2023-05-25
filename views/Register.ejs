@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Register.css">
+    <title>Registration Form</title>
+    <link rel="icon" href="LOGO.png" type="image/icon type">
+</head>
+<body>
+    <nav class="nav-form">
+        <img src="LOGO.png" alt="logoimg">
+    </nav>
+    <h1>Registration Form</h1>
+    <form method="post" action="/register" enctype="multipart/form-data" >
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required="true">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required="true">
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required="true">
+        </div>
+        <div class="form-group">
+            <label for="photo">User Photo:</label>
+            <input type="file" id="photo" name="file" accept="image/*" required="true">
+        </div>
+        <div class="form-group">
+            <label for="github-id">GitHub ID:</label>
+            <input type="text" id="github-id" name="githubid" required="true">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required="true">
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirmPassword" required="true">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn" onclick="openPopup()" value="Register">
+            <div class="popup" id="popup">
+                <img src="tick.png" alt="tickimg">
+                <h2>Thank You!</h2>
+                <p>Your details have been successfully submitted. Thanks!</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+</html>

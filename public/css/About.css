@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #8ec9eb;
+}
+
+/*body {
+    background-image: url("img/backabout.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 100);
+}*/
+
+body {
+    font-family: Arial, sans-serif;
+    text-decoration: double;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Navigation styles */
+.nav-css {
+    background-color: #333;
+    padding: 10px;
+    color: #fff;
+}
+
+.nav-css nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-css .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-css .logo .adjust-name {
+    font-size: 18px;
+}
+
+.nav-css ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-css ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.nav-css ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-css ul li a:hover {
+    background-color: #555;
+}
+
+.about-content {
+    text-align: center;
+}
+/* Footer styles */
+footer {
+    background-color: #8e8b8b;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex-basis: 33.33%;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li i {
+    margin-right: 5px;
+    color: #888;
+}
+
+.footer-section.social ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-section.social ul li a {
+    color: #888;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-section.social ul li a:hover {
+    color: #333;
+}
+
+.footer-bottom {
+    background-color: #333;
+    padding: 10px;
+    color: #fff;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .nav-css .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nav-css .logo .adjust-name {
+        font-size: 16px;
+    }
+
+    .nav-css ul li a {
+        padding: 4px 8px;
+    }
+
+    .footer-section {
+        flex-basis: 100%;
+    }
+}
