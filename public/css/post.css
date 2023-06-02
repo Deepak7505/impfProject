@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.heading {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+    width: 100vw;
+    position: fixed;
+}
+
+.heading h1 {
+    font-size: 24px;
+}
+
+.top {
+  /* background-color: #333; */
+  width: 100vw;
+  padding-left: 240px;
+  position: fixed;
+  top: 4rem;
+  height: 3rem;
+}
+
+.search-container {
+  display: flex;
+  width: 80vw;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.search-container input[type="text"] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.search-container button[type="submit"] {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.left {
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.nav-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px; 
+}
+
+.nav-content li {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.nav-content a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.nav-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.bottom-log {
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom-log hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.bottom-log a {
+    color: #fff;
+}
+
+.bottom-log a:hover {
+    color: #333;
+}
+
+.content {
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 200px; 
+  width: 100vw; 
+  box-sizing: border-box;
+  background: pink;
+  height: max-content;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+  margin-left: 100px;
+  color: blue;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content textarea {
+  height: 100px;
+  width: 60vw;
+  margin-bottom: 10px;
+  resize: vertical;
+  outline: none;
+  margin-left: 100px;
+}
+
+
+
+.content button {
+  width: 100px;
+  margin-left: 100px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+}
+
+.postCard{
+    height: max-content;
+    width: 70rem;
+    border: 2px;
+    margin-left: 15rem;
+    padding: 2%;
+    flex-wrap: wrap;
+    padding-top: 10%;
+}
+
+.card{
+    height: max-content;
+    width: 25rem;
+    border: 1px solid gray;
+    padding: 3%;
+    color: #fff;
+    background-color: #333;
+    overflow: hidden;
+    box-shadow: 2rem;
+    outline: none;
+}
+
+.full_body{
+  background-color: rgb(233, 206, 210);
+}
+
+#userName{
+  font-size: small;
+}

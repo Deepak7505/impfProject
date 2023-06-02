@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="post.css">
+  <title>Portfolio</title>
+</head>
+<body>
+  <!--heading-->
+  <div class="heading">
+    <h1>IMPF(It's my portfolio)</h1>
+    </div>
+
+    <!--search-->
+    <div class="top">
+      <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+      </div>
+    </div>
+
+    <div class="full_body">
+        <div class="postCard">
+          <div class="card">
+            <h1 id="firstBoxName" >name : Albert </h1>
+            <h2 id="firstBoxSkills"></h2><br>
+            <h2 id="firstBoxDiscription" >hey i am albert and i am seeking for a job as a fresher and i am a frontend developer who can make interactive web pages i have the knowlage of javaScript so i can make dynamic web pages</h2><br>
+            <h2><a href="#" id="githubid" style="color: aqua;"></a><br>
+           </div>
+        </div>
+        <div class="postCard">
+          <div class="card">
+           <h1>name : Albert </h1>
+           <h2>hey i am albert and i am seeking for a job as a fresher and i am a frontend developer who can make interactive web pages i have the knowlage of javaScript so i can make dynamic web pages</h2>
+          </div>
+       </div>
+       <div class="postCard">
+        <div class="card">
+          <h1>name : Albert </h1>
+          <h2>hey i am albert and i am seeking for a job as a fresher and i am a frontend developer who can make interactive web pages i have the knowlage of javaScript so i can make dynamic web pages</h2>
+         </div>
+     </div>
+     <div class="postCard">
+      <div class="card">
+        <h1>name : Albert </h1>
+        <h2>hey i am albert and i am seeking for a job as a fresher and i am a frontend developer who can make interactive web pages i have the knowlage of javaScript so i can make dynamic web pages</h2>
+       </div>
+   </div>
+   <div class="postCard">
+    <div class="card">
+      <h1>name : Albert </h1>
+      <h2>hey i am albert and i am seeking for a job as a fresher and i am a frontend developer who can make interactive web pages i have the knowlage of javaScript so i can make dynamic web pages</h2>
+     </div>
+ </div>
+ <div class="postCard">
+  <div class="card">
+    <h1>name : Albert </h1>
+    <h2>hey i am albert and i am seeking for a job as a fresher and i am a frontend developer who can make interactive web pages i have the knowlage of javaScript so i can make dynamic web pages</h2>
+   </div>
+</div>
+
+    </div>
+
+    <!--header-->
+    <div class="left">
+            <nav class="nav-content">
+            <ul>
+              <a href="#"><img id="userImage" src="https://pluspng.com/img-png/png-user-icon-icons-logos-emojis-users-2400.png" alt="user img"></a>
+              <li id="userName">Welcome </li>
+              <hr>
+                <li><a href="/">Home</a></li>
+                <hr>
+                <li><a href="#" id="wirtPost">Post</a></li>
+                <hr>
+                <div class="bottom-log">
+                <li><a href="/">Log-out</a></li>
+              </div>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--content-->
+<div class="content" id="postdataContent">
+  <h2 id="userPost" >Create a Post</h2>
+  <form>
+    <textarea name="postContent_Skill" id="postContent_Skill" placeholder="Write your skills here"></textarea>
+    <textarea name="postContent_Discription" id="postContent_Discription" placeholder="Write your discription here"></textarea>
+    <div>
+      <button type="button" onclick="AfterSubmitPost()">Post</button>
+      <button type="button" id="CancelPost">Cancel</button>
+    </div>
+  </form>
+</body>
+</html>
+
+<script>
+    const wirtPost = document.getElementById("wirtPost");
+    const postdataContent = document.getElementById("postdataContent");
+    const CancelPost = document.getElementById("CancelPost");
+    postdataContent.style.display="none";
+    wirtPost.addEventListener("click",()=>{
+    postdataContent.style.display="block";
+    })
+    CancelPost.addEventListener("click",()=>{
+    postdataContent.style.display="none";
+    })
+    const userImage = document.getElementById("userImage");
+    userImage.addEventListener("click",()=>{
+      window.history.back();
+    })
+
+    fetch("http://localhost:3000/apidata").then((data)=>{ return data.json()}).then((data)=>{
+    const file =  data.datauser[0].file;
+    const Name = data.datauser[0].name;
+    const githubid = data.datauser[0].githubid;
+
+    console.log(data);
+    const userImage = document.getElementById("userImage");
+    userImage.src=file;  
+    const userName = document.getElementById("userName");
+    userName.innerText = `Welcome ${Name}`;
+    const userPost = document.getElementById("userPost");
+    userPost.innerText=`Make your post ${Name}`;
+    const firstBoxName = document.getElementById("firstBoxName");
+    firstBoxName.innerText = (!AfterSubmitPost)?`Name : ${Name}`:`Name :Albert`;
+    const GitHubID = document.getElementById("githubid");
+    GitHubID.innerText = (!AfterSubmitPost)?`Name : ${githubid}`:`githubID : AlbertGitHub`;
+    }).catch((err)=>console.log(err));
+
+
+    function AfterSubmitPost(){
+      console.log("it's after log");
+      const postContent_Skill = document.getElementById("postContent_Skill").value;
+      const postContent_Discription = document.getElementById("postContent_Discription").value;
+      const firstBoxSkills = document.getElementById("firstBoxSkills");
+      const firstBoxDiscription = document.getElementById("firstBoxDiscription");
+      firstBoxSkills.innerText = postContent_Skill;
+      firstBoxDiscription.innerText = postContent_Discription; 
+      console.log(postContent_Skill + " dis " + postContent_Discription);
+      postdataContent.style.display="none";
+    }
+
+</script>
+</html>

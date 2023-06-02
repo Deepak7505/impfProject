@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 p {
@@ -17,8 +18,12 @@ body {
 
 .head-ing {
     text-align: center;
-    background-color: gray;
+    background-color: green;
+    color: white;
     padding-top: 20px;
+    width: 100vw;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 p {
@@ -83,4 +88,24 @@ img {
 .userImage{
     height: 15rem;
     width: 15rem;
+}
+
+.navbaar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkes{
+    text-decoration: none;
+    text-align: center;
+    background-color: green;
+    padding-top: 20px;
+    width: 20rem;
+}
+.linkes a{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    padding: 1%;
+    margin-right: 20px;
 }

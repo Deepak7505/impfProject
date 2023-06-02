@@ -37,12 +37,12 @@ app.get("/register",(req,res)=>{
 })
 
 
-
-
 app.get("/login",(req,res)=>{
     console.log(req.body);
     res.render("Login");
 })
+
+
 
 
 app.listen(PORT,()=>console.log(`listening on port ${PORT}`));

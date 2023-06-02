@@ -5,6 +5,7 @@ const multer = require("multer");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const path = require("path");
+const { url } = require("inspector");
 
 
 /// storage
@@ -69,13 +70,31 @@ try {
 
 
 
-router.post("/login", async (req, res) => {
+
+router.get("/postdata",(req,res)=>{
+    res.render("PostData");
+})
+
+router.post("/postdata",(req,res)=>{
+    console.log(req.body);
+    res.render("PostData");
+})
+
+
+router.get("/datauser",(req,res)=>{
+       res.render("portfolio");
+})
+
+
+
+router.post("/datauser", async (req, res) => {
 
     try {
         const { email, password } = req.body;
+        emailData = email;
 
         const userLogin = await user_collection.findOne({ email: email });
-
+        
 
         if (userLogin) {
 
@@ -99,11 +118,17 @@ router.post("/login", async (req, res) => {
                 const { name , githubid  , dob , file } = userData[0];
                 const userEmail = userData[0].email;
                 console.log(`this is the user data ${name} or id ${githubid} and file ${file}`);
-                res.render('portfolio',{name,githubid,dob,file,userEmail});
-                // res.send(userData);
+                res.render('portfolio',{name,githubid,dob,file,userEmail, data:userData});
+                try {
+                    router.get("/apidata",(req,res)=>{
+                        res.json({datauser:userData});
+                    })
+                } catch (error) {
+                    console.log("errr frome /apidata");
+                }
+                // res.json({userData})
+                // res.send(userData + "it's userdata");
             }
-
-
         } else {  
             res.status(400).json({ error: "Invalid Credientials" });
         }
@@ -113,12 +138,6 @@ router.post("/login", async (req, res) => {
     }
 
 })
-
-router.get("/postdata",(req,res)=>{
-    res.render("post");
-})
-
-
 
 
 

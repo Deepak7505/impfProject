@@ -9,8 +9,16 @@
     <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-    <h1 class="head-ing">Welcome to World of Portfolio</h1>
+    <nav class="navbaar">
+        <h1 class="head-ing">I M P F</h1>
+        <div class="linkes">
+            <a href="/">HOME</a>
+            <a href="/postdata">POST</a>
+        </div>
+    </nav>
     <p>"Unlocking the Artistry Within: Experience Our Diverse People Portfolio"</p>
+    
+    
     <div class="box">
         <div class="content">
             <div class="info">
@@ -24,6 +32,16 @@
     </div>
     
 </body>
+<script>
+    
+    async function userData(){
+     const data = await fetch("http://localhost:3000/login");
+     const json = data.json();
+     console.log(data);
+    }
+
+    userData();
+</script>
 </html>
 
 <!-- 
