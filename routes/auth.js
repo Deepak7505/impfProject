@@ -75,7 +75,7 @@ router.get("/postdata",(req,res)=>{
     res.render("PostData");
 })
 
-router.post("/postdata",(req,res)=>{
+router.post("/postdata",(req,res)=>{ 
     console.log(req.body);
     res.render("PostData");
 })

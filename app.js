@@ -14,7 +14,7 @@ require("./model/dbConnection");
 
 
 app.use(require("./routes/auth"));
-
+ 
 
 const cssPath = path.join(__dirname, './public/css');
 const imagePath = path.join(__dirname,'./public/images');
